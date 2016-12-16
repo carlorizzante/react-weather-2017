@@ -4,12 +4,12 @@ const path = require("path");
 const app = express();
 const PORT = process.env.PORT || 3000;
 
+// Heroku compatibility
 app.use(function(req, res, next) {
-  if (req.headers["x-forwarded-proto"] === "http") {
-    next();
-  } else {
+  if (req.headers["x-forwarded-proto"] === "https") {
     res.redirect("http://" + req.hostname + req.url);
-    // next(); // next here shouldn't be necessary but just in case...
+  } else {
+    next();
   }
 });
 
