@@ -41,7 +41,7 @@ const Weather = React.createClass({
     }
     return (
       <div>
-        <h3>Get Weather</h3>
+        <h1 className="text-centered page-title">Get Weather</h1>
         <WeatherForm onFormSubmit={this.handleFormSubmit}/>
         {renderMessage()}
       </div>

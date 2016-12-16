@@ -1,6 +1,6 @@
 const React = require("react");
 
-const Nav = require("./Nav");
+const Nav = require("./Nav"); // choose between Nav and NavAlt
 
 // const Main = React.createClass({
 //   render: function() {
@@ -17,7 +17,11 @@ const Main = props => {
   return (
     <div id="main">
       <Nav/>
-      {props.children}
+      <div className="row">
+        <div className="small-12 small-centered medium-8 large-6 columns">
+          {props.children}
+        </div>
+      </div>
     </div>
   );
 }
