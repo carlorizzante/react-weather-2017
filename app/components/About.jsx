@@ -12,9 +12,16 @@ const About = props => {
   return (
     <div>
       <h1 className="text-centered page-title">About</h1>
-      <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Donec ullamcorper nulla non metus auctor fringilla. Maecenas faucibus mollis interdum. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum id ligula porta felis euismod semper. Nullam quis risus eget urna mollis ornare vel eu leo. Nulla vitae elit libero, a pharetra augue. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Aenean lacinia bibendum nulla sed consectetur. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.</p>
-      <p>Donec sed odio dui. Maecenas faucibus mollis interdum. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec ullamcorper nulla non metus auctor fringilla. Nulla vitae elit libero, a pharetra augue.</p>
+      <p>Basic Weather App built entirely in Javascript with React and Webpack for the front end, Node.js and Express for the back end.</p>
+      <p>Layout by Foundation, styling by custom CSS.</p>
+      <p>Resources:</p>
+      <ul>
+        <li><a href="#">ReactJS</a></li>
+        <li><a href="#">Webpack</a></li>
+        <li><a href="#">Node.js</a></li>
+        <li><a href="#">Express</a></li>
+      </ul>
+      <p>Weather data by city provided by <a href="#">OpenWeatherMap.org</a>.</p>
     </div>
   );
 }
