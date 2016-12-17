@@ -23,7 +23,7 @@ const openWeatherMap = {
       }
 
     }, err => {
-      throw new Error(err);
+      throw new Error("Unable to fetch weather for that location.");
     });
   }
 

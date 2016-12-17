@@ -2,6 +2,7 @@ const React = require("react");
 
 const WeatherForm = require("./WeatherForm");
 const WeatherMessage = require("./WeatherMessage");
+const ErrorModal = require("./ErrorModal");
 const openWeatherMap = require("../api/openWeatherMap");
 
 const Weather = React.createClass({
@@ -13,7 +14,8 @@ const Weather = React.createClass({
   handleFormSubmit: function(location) {
     this.setState({
       isLoading: true,
-      temp: null
+      temp: null,
+      errorMessage: null
     });
     openWeatherMap.getTemp(location).then(temp => {
       this.setState({
@@ -24,12 +26,13 @@ const Weather = React.createClass({
     }, err => {
       console.log(err);
       this.setState({
-        isLoading: false
+        isLoading: false,
+        errorMessage: err.message
       });
     });
   },
   render: function() {
-    const { isLoading, location, temp } = this.state;
+    const { isLoading, location, temp, errorMessage } = this.state;
     function renderMessage() {
       if (isLoading) {
         return <p>Fetching weather...</p>;
@@ -39,11 +42,19 @@ const Weather = React.createClass({
         return <p>Unable to fetch weather on your location.</p>;
       }
     }
+    function renderError() {
+      if (typeof errorMessage === "string") {
+        return <ErrorModal
+          title="Sorry, pal!"
+          message={errorMessage}/>;
+      }
+    }
     return (
       <div>
-        <h1 className="text-centered page-title">Get Weather</h1>
+        <h1 className="text-center page-title">Get Weather</h1>
         <WeatherForm onFormSubmit={this.handleFormSubmit}/>
         {renderMessage()}
+        {renderError()}
       </div>
     );
   }

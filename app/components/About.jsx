@@ -11,7 +11,7 @@ const React = require("react");
 const About = props => {
   return (
     <div>
-      <h1 className="text-centered page-title">About</h1>
+      <h1 className="text-center page-title">About</h1>
       <p>Basic Weather App built entirely in Javascript with React and Webpack for the front end, Node.js and Express for the back end.</p>
       <p>Layout by Foundation, styling by custom CSS.</p>
       <p>Resources:</p>

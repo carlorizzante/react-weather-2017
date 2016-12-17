@@ -12,7 +12,7 @@ const { Link } = require("react-router");
 const Examples = props => {
   return (
     <div>
-      <h1 className="text-centered page-title">Examples</h1>
+      <h1 className="text-center page-title">Examples</h1>
       <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Donec ullamcorper nulla non metus auctor fringilla. Maecenas faucibus mollis interdum.</p>
       <ol>
         <li><Link to="/?location=Copenhagen,dk">Copenhagen, Denmark</Link></li>
