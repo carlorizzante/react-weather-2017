@@ -22,7 +22,7 @@ module.exports = {
   resolve: {
     root: __dirname,
     alias: {
-      appStyles: "app/styles/app.css"
+      appStyles: "app/styles/app.scss"
     },
     extensions: ["", ".js", ".jsx"]
   },

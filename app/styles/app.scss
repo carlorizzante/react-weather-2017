@@ -1,5 +1,9 @@
+$background-color: #eee;
+$space-large: 2.5rem;
+$title-color: purple;
+
 body {
-  background-color: #eee;
+  background-color: $background-color;
 }
 
 nav.top-bar {
@@ -28,7 +32,8 @@ nav.top-bar {
 }
 
 .page-title {
-  margin: 2.5rem auto;
+  margin: $space-large auto;
+  color: $title-color;
 }
 
 input[type=search] {
