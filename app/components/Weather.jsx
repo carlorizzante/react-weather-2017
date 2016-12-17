@@ -8,7 +8,10 @@ const openWeatherMap = require("../api/openWeatherMap");
 const Weather = React.createClass({
   getInitialState: function() {
     return {
-      isLoading: false
+      isLoading: false,
+      location: null,
+      temp: null,
+      errorMessage: null
     }
   },
   handleFormSubmit: function(location) {
@@ -30,6 +33,22 @@ const Weather = React.createClass({
         errorMessage: err.message
       });
     });
+  },
+  componentDidMount: function() {
+    const location = this.props.location.query.location;
+    if (typeof location === "string" && location.length > 0) {
+      this.handleFormSubmit(location);
+      window.location.hash = ""; // Need fixing, not working
+      console.log("Fix windown.location.hash to reset URL");
+    }
+  },
+  componentWillReceiveProps: function(newProps) {
+    const location = newProps.location.query.location;
+    if (typeof location === "string" && location.length > 0) {
+      this.handleFormSubmit(location);
+      window.location.hash = ""; // Nedd fixing, not working
+      console.log("Fix windown.location.hash to reset URL");
+    }
   },
   render: function() {
     const { isLoading, location, temp, errorMessage } = this.state;

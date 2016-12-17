@@ -1,28 +1,16 @@
 const React = require("react");
 
-const { Link, IndexLink } = require("react-router");
-
-// const Nav = React.createClass({
-//   render: function() {
-//     return (
-//       <nav>
-//         <ul>
-//           <li><IndexLink to="/" activeClassName="current">Get Weather</IndexLink></li>
-//           <li><Link to="/examples" activeClassName="current">Examples</Link></li>
-//           <li><Link to="/about" activeClassName="current">About</Link></li>
-//         </ul>
-//       </nav>
-//     );
-//   }
-// });
+const { Link, IndexLink, browserHistory } = require("react-router");
 
 const Nav = React.createClass({
-  onFormSubmit: function(event) {
+  onSearch: function(event) {
     event.preventDefault();
     const location = this.refs.location.value;
     if (typeof location === "string" && location.length > 0) {
       this.refs.location.value = "";
-      this.props.onFormSubmit(location);
+      const encodedLocation = encodeURIComponent(location);
+      // window.location = `/?location=${encodedLocation}`;
+      browserHistory.push(`/?location=${encodedLocation}`);
     }
   },
   render: function() {
@@ -39,7 +27,7 @@ const Nav = React.createClass({
         <div className="top-bar-right">
           <ul className="menu">
             <li>
-              <form onSubmit={this.onFormSubmit}>
+              <form onSubmit={this.onSearch}>
                 <div className="input-group">
                   <input type="search" ref="location" className="input-group-field" placeholder="Search weather by city..."/>
                   <div className="input-group-button">
