@@ -1,6 +1,6 @@
 const React = require("react");
 
-const Nav = require("./Nav"); // choose between Nav and NavAlt
+const Nav = require("./NavAlt"); // choose between Nav and NavAlt
 
 // const Main = React.createClass({
 //   render: function() {

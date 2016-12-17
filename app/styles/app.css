@@ -1,0 +1,36 @@
+body {
+  background-color: #eee;
+}
+
+nav.top-bar {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.site-title {
+  font-weight: bold;
+}
+
+.current {
+  border-bottom: 2px solid teal !important;
+}
+
+.top-bar .menu li a {
+  margin-left: 1rem;
+  margin-right: 1rem;
+  padding-left: 0;
+  padding-right: 0;
+  border-bottom: 2px solid transparent;
+}
+
+.top-bar .input-group {
+  margin-bottom: 0;
+}
+
+.page-title {
+  margin: 2.5rem auto;
+}
+
+input[type=search] {
+  box-shadow: none;
+}

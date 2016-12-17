@@ -13,6 +13,9 @@ require("style!css!foundation-sites/dist/css/foundation.min.css");
 // Start foundation
 $(document).foundation();
 
+// Load css
+require("style!css!appStyles");
+
 ReactDOM.render(
   <Router history={browserHistory}>
     <Route path="/" component={Main}>

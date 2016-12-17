@@ -41,7 +41,7 @@ const Nav = React.createClass({
             <li>
               <form onSubmit={this.onFormSubmit}>
                 <div className="input-group">
-                  <input type="text" ref="location" className="input-group-field" placeholder="Search weather..."/>
+                  <input type="search" ref="location" className="input-group-field" placeholder="Search weather by city..."/>
                   <div className="input-group-button">
                     <input type="submit" className="button" value="Get Weather"/>
                   </div>
